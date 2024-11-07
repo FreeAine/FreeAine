@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>DreaMoving</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content="DreaMoving" />
+    <meta property="og:description" content="Project page for DreaMoving." />
+
+        <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DreaMoving" />
+    <meta name="twitter:description" content="Project page for DreaMoving." />
+    <meta name="twitter:image" content="" />
+
+
+    <!--<link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <br>
+    <div class="container" id="main" style="width: 85%;">
+    <!-- <div class="container" id="main"> -->
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>FreeAine</b>: Training-Free Human Image Animation with Preview-Guided Denoising</br>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <br><p>Anonymous Submission</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    In this work, we introduce <strong>FreeAine</strong>, a training-free framework that leverages the inherent capabilities of image diffusion models to enable temporal consistency, identity preservation, and background stability. 
+                    Our approach incorporates a novel preview generation strategy that supplies temporal and structural priors from generated preview frames, effectively guiding pose alignment and background consistency without training. 
+                    Additionally, <strong>FreeAine</strong> introduces Inversion-Boosted Attention and Causal Spatial Self-Attention modules to improve temporal consistency and identity preservation. 
+                    Experimental results demonstrate that <strong>FreeAine</strong> outperforms existing training-free competitors and well established training-based baseline method, achieving generation quality comparable to state-of-the-art methods and offers robust generalization across diverse datasets.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row"> 
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Network Architecture
+                </h3>
+                <p class="text-justify">
+                    The overview of <strong>FreeAine</strong>. We introduce a novel network architecture that combines a U-Net with ControlNet, offering a more efficient approach to incorporating reference image content and structure into the U-Net without relying on CLIP or Appearance Net. 
+                    Specifically, our method incorporates three crucial components in addition to the basic SD model: Control branch, Inversion-Boosted Attention, Causal Spatial Self-Attention.
+                </p>
+                <br><image width="80%" src="assets/pipeline.png" class="img-responsive" alt="overview" style="margin:auto"><br>
+            </div>
+        </div>
+
+
+        <div class="row"> 
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Preview Generation Strategy
+                </h3>
+                <p class="text-justify">
+                    The overview of <strong>Preview Generation Strategy</strong>. We propose a general strategy to generate preview frames closely aligned with the target frames in HIA tasks, 
+                    enabling more accurate generation using powerful pretrained models.
+                </p>
+                <br><image width="35%" src="assets/preview.png" class="img-responsive" alt="preview_generation" style="margin:auto"><br>
+            </div>
+        </div>
+
+
+        <div class="row"> 
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparisions with Existed Approaches
+                </h3>
+                <p class="text-justify">
+                    we present a qualitative comparison of FreeAine with other methods. 
+                    FreeAine demonstrates competitive performance against training-based approaches, with visually superior generation quality compared to the well-established baseline, DisCo. 
+                    Since our method is training-free, it exhibits strong generalization across various datasets.
+                </p>
+                <br><image width="100%" src="assets/compare_result.png" class="img-responsive" alt="compare_result" style="margin:auto"><br>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Animation on TikTok Dataset
+                </h3>
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TikTok_Dataset\video_1.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TikTok_Dataset\video_3.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TikTok_Dataset\video_10.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TikTok_Dataset\video_6.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TikTok_Dataset\video_7.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TikTok_Dataset\video_9.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Animation on TED-talks Dataset
+                </h3>
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TEDtalks_Dataset\video3.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_TEDtalks_Dataset\video5.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Animation on EverybodyDanceNow Dataset
+                </h3>
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_EDN_Dataset\subject1.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets\videos\Animation_on_EDN_Dataset\subject3.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Other domain results
+                </h3>
+                <p class="text-justify">
+                    <strong>FreeAine</strong> exhibits robust generalization capabilities on Other domains. 
+                    We use Champ's pose alignment method to align the poses between the driving video and the reference image. 
+                    Below, the left side of each video shows the driving pose, and the right side shows the aligned pose.
+                </p>            
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center" valign="middle" width="20%">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets/videos/Animation_on_OtherDomain_Dataset/pose_sequence_1-1-4in1.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle" width="20%">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets/videos/Animation_on_OtherDomain_Dataset/pose_sequence_2-9-4in1.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle" width="20%">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets/videos/Animation_on_OtherDomain_Dataset/pose_sequence_5-4-4in1.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                        <td align="center" valign="middle" width="20%">
+                            <video id="v0" width="99%" autoplay loop muted controls>
+                                <source src="assets/videos/Animation_on_OtherDomain_Dataset/pose_sequence_6-13-4in1.mp4" type="video/mp4" />
+                            </video>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://jonbarron.info/mipnerf/">Mip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>  
+    <br><br><br>
+</body>
+</html>
